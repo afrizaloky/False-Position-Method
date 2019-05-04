@@ -5,6 +5,23 @@ from math import *
 import sys
 from prettytable import PrettyTable
 
+
+
+
+#Value from function
+def f(value):
+        
+        res = expr.subs(x, value)
+        return res
+
+
+#False Position Method
+def false_position(xu, xl):
+        atas = xu*f(xl)-xl*f(xu)
+        bawah = f(xl)-f(xu)
+        xm = atas/bawah
+        return xm
+
 #Input
 x = var('x')
 
@@ -30,7 +47,7 @@ except:
         
 
 try:
-        RAE = float(input("Enter the value of tollerance (0.0001) = "))
+        RAE = float(input("Enter the value of Aproximation Error (0.0001) = "))
 except:
         print("input yang anda masukkan tidak sesuai")
         sys.exit()
@@ -39,24 +56,13 @@ RAE_now = 100
 counter = 0
 x_old = 0
 
-#Value from function
-def f(value):
-        
-        res = expr.subs(x, value)
-        return res
-
-
-#False Position Method
-def false_position(xu, xl):
-        atas = xu*f(xl)-xl*f(xu)
-        bawah = f(xl)-f(xu)
-        xm = atas/bawah
-        return xm
-
+#Definition Table
 t = PrettyTable()
-t.field_names=["i", "xi", "Tollerance"]
+t.field_names=["i", "xi", "Aproximation Error"]
+
 
 try:
+        #looping
         while RAE<RAE_now:
 
         
@@ -68,11 +74,9 @@ try:
                         xl=xm
                 elif(diff==0):
                         print("True Value = "+str(xm)+".")
-                        break
                         sys.exit()
                 else:
                         print("Program Error")
-                        break
                         sys.exit()
                 if(counter==0):
                         x_new = xm
@@ -89,4 +93,6 @@ try:
 except:
         print("Program Error")
         sys.exit()
+
+
 print(t)
