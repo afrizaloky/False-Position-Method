@@ -36,8 +36,7 @@ try:
         xl = float(input("Enter the value of Xl (-10) = "))     
 except:
         print("input yang anda masukkan tidak sesuai")
-        sys.exit()
-        
+        sys.exit()    
 
 try:
         xu = float(input("enter the value of xu (15) = "))
@@ -45,6 +44,11 @@ except:
         print("input yang anda masukkan tidak sesuai")
         sys.exit()
         
+if(f(xl)*f(xu) < 0):
+	success = 1
+else:
+	print("Pastikan nilai F(xl) dan F(xu) berlawanan tanda")
+	sys.exit()
 
 try:
         RAE = float(input("Enter the value of Aproximation Error (0.0001) = "))
