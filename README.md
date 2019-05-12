@@ -10,4 +10,4 @@ B. How To Use
     3. Make sure f(xl) and f(xu) have different sign
 
 C. Documentations 
-    <img src="https://prnt.sc/nni3e2">
+    <img src="https://image.prntscr.com/image/glLi6lGHRZeud0vlr-U9bQ.png">
